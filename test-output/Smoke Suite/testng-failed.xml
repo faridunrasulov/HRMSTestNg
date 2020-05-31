@@ -11,11 +11,22 @@
       </run>
     </groups>
     <classes>
+      <class name="com.HRMS.testcases.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="validAdminLogin"/>
+          <include name="tearDown"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
+        </methods>
+      </class> <!-- com.HRMS.testcases.LoginTest -->
       <class name="com.HRMS.testcases.dataProviderTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="HRMS" invocation-numbers="0"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
+          <include name="HRMS"/>
         </methods>
       </class> <!-- com.HRMS.testcases.dataProviderTest -->
       <class name="com.HRMS.testcases.HwData">
@@ -23,6 +34,8 @@
           <include name="test"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
         </methods>
       </class> <!-- com.HRMS.testcases.HwData -->
     </classes>

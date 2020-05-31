@@ -3,7 +3,6 @@ package com.HRMS.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 import com.HRMS.testbase.BaseClass;
 import com.HRMS.utils.CommonMethods;
@@ -80,11 +79,11 @@ public class addEmployeePage extends CommonMethods{
 		sendText(employeePage.credenUserName, userName);
 		sendText(employeePage.credenUserPassword, password);
 		sendText(employeePage.confirmCredenPassword,confirmPassword);
-		waitAndClick(employeePage.saveButton);
-		String expectedValue = firstName+" "+lastName;
-		Assert.assertEquals(employeePage.profilePic.getText(), expectedValue);
-		sleep(1);
-		takeScreenshots(screenShot);
+//		waitAndClick(employeePage.saveButton);
+//		String expectedValue = firstName+" "+lastName;
+//		Assert.assertEquals(employeePage.profilePic.getText(), expectedValue);
+//		sleep(1);
+		//takeScreenshots(screenShot);
 	}
 
 

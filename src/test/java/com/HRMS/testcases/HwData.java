@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.HRMS.utils.CommonMethods;
 import com.HRMS.utils.ConfigsRead;
+import com.HRMS.utils.Constants;
 import com.HRMS.utils.ExcelUtility;
 
 public class HwData extends CommonMethods{
@@ -60,7 +61,7 @@ public class HwData extends CommonMethods{
 	
 	@DataProvider(name = "userDataFromExcel")
 	public Object[][] getData2() {
-		Object[][] getData = ExcelUtility.getDataFromExcel(System.getProperty("user.dir")+"/src/test/resources/testdata/file.xlsx", "Sheet1");
+		Object[][] getData = ExcelUtility.getDataFromExcel(Constants.TESTDATA_FILEPATH, "EmployeeLogInCredentials");
 		return getData;
 	}
 
