@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Smoke Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.HRMS.testbase.Listener"/>
+  </listeners>
+  <test thread-count="5" name="Smoke Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.HRMS.testcases.dataProviderTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="HRMS" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.HRMS.testcases.dataProviderTest -->
+      <class name="com.HRMS.testcases.HwData">
+        <methods>
+          <include name="test"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.HRMS.testcases.HwData -->
+    </classes>
+  </test> <!-- Smoke Test(failed) -->
+</suite> <!-- Failed suite [Smoke Suite] -->
