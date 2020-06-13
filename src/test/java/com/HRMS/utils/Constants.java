@@ -16,4 +16,6 @@ public class Constants {
 	
 	public static final String REPORT_FILE_PATH = System.getProperty("user.dir")+"/target/html-report/HRMS.html";
 	
+	public static final String SCREENSHOT_FILEPATH = System.getProperty("user.dir")+"/screenshot/";
+	
 }

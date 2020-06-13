@@ -1,8 +1,9 @@
 package com.HRMS.utils;
 
 import java.io.File;
-
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -10,11 +11,11 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -243,10 +244,9 @@ public class CommonMethods extends PageInitializer {
 		getWaitObject().until(ExpectedConditions.stalenessOf(element));
 	}
 
-	public static void findByIdAndClick(WebDriver driver, String id) {
+	public static void findByIdAndClick(List<WebElement> rows, String id) {
 		boolean isFound = false;
 		while (!isFound) {
-			List<WebElement> rows = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr"));
 			for (int i = 0; i < rows.size(); i++) {
 				String rowsTxt = rows.get(i).getText();
 				if (rowsTxt.contains(id)) {
@@ -323,10 +323,6 @@ public class CommonMethods extends PageInitializer {
 		getWaitObject().until(ExpectedConditions.textToBePresentInElementValue(element, text));
 	}
 
-	public static void waitForStalenessOfElement(WebElement element) {
-		getWaitObject().until(ExpectedConditions.stalenessOf(element));
-	}
-
 	public static void waitForVisibility(WebElement element) {
 		getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
@@ -353,14 +349,6 @@ public class CommonMethods extends PageInitializer {
 	public static void scrollUp(int pixel) {
 		getJavaScriptObject().executeScript("window.scrollBy(0,-" + pixel + ")");
 
-	}
-
-	public static void isDisplayedLogo(WebElement element) {
-		if (element.isDisplayed()) {
-			System.out.println("Logo is displayed");
-		} else {
-			System.err.println("Logo is NOT displayed");
-		}
 	}
 
 	/**
@@ -397,14 +385,23 @@ public class CommonMethods extends PageInitializer {
 		return ts;
 	}
 
-	public static void takeScreenshots(String filePath) {
+	public static String takeScreenshots(String fileName) {
 		File file = createObjectScreenShot().getScreenshotAs(OutputType.FILE);
-			try {
-				FileUtils.copyFile(file, new File("screenshots/"+filePath+".png"));
+		String destinationFile = Constants.SCREENSHOT_FILEPATH+fileName+getTimeStemp()+".png";
+			
+		try {
+				FileUtils.copyFile(file, new File(destinationFile));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		
+		return destinationFile;
+	}
+	
+	public static  String getTimeStemp() {
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		return sdf.format(d.getTime());
 	}
 
 }

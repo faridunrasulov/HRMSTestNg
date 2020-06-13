@@ -10,6 +10,8 @@
           <include name="validAdminLogin"/>
           <include name="tearDown"/>
           <include name="emptyUserName"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
         </methods>
       </class> <!-- com.HRMS.testcases.LoginTest -->
     </classes>

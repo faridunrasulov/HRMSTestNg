@@ -9,6 +9,8 @@
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/utils/ExcelUtility.java
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/testcases/dataProviderTest.java
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/testbase/BaseClass.java
+/Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/testcases/DefineReport.java
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/pages/LogInPageElements.java
+/Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/pages/ReportPage.java
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/utils/Constants.java
 /Users/admin/eclipse-workspace/HRMSFramework/src/test/java/com/HRMS/testcases/LoginTest.java

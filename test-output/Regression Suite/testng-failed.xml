@@ -11,11 +11,22 @@
       </run>
     </groups>
     <classes>
-      <class name="com.HRMS.testcases.HwData">
+      <class name="com.HRMS.testcases.LoginTest">
         <methods>
-          <include name="test"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="emptyUserName"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
+        </methods>
+      </class> <!-- com.HRMS.testcases.LoginTest -->
+      <class name="com.HRMS.testcases.HwData">
+        <methods>
+          <include name="test" invocation-numbers="0 1 2"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="writeReport"/>
+          <include name="generateReport"/>
         </methods>
       </class> <!-- com.HRMS.testcases.HwData -->
     </classes>

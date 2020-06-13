@@ -65,7 +65,7 @@ public class addEmployeePage extends CommonMethods{
 	public WebElement selectStatus;
 	
 	@FindBy(id="employeeId")
-	public WebElement empId;
+	public WebElement ADDemployeeId;
 	
 	public void navigateAddEmpPage() {
 		moveHoverToElement(PIM);

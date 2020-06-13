@@ -6,9 +6,13 @@ import org.testng.annotations.Test;
 import com.HRMS.utils.CommonMethods;
 import com.HRMS.utils.ConfigsRead;
 
+
+
+
+
 public class dataProviderTest extends CommonMethods {
 
-	@Test(dataProvider = "getTestData",groups = "smoke")
+	@Test(dataProvider = "getTestData")
 	public void HRMS(String firstName, String lastName, String userName, String password, String confirmPassword,
 			String screenShot) {
 		loginPage.logIn(ConfigsRead.getProperty("userName"), ConfigsRead.getProperty("password"));
