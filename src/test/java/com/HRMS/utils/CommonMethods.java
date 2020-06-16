@@ -11,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
@@ -244,22 +243,23 @@ public class CommonMethods extends PageInitializer {
 		getWaitObject().until(ExpectedConditions.stalenessOf(element));
 	}
 
-	public static void findByIdAndClick(List<WebElement> rows, String id) {
+	public static void findByIdAndClick(String id) {
 		boolean isFound = false;
 		while (!isFound) {
+			List<WebElement> rows = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr"));
 			for (int i = 0; i < rows.size(); i++) {
-				String rowsTxt = rows.get(i).getText();
-				if (rowsTxt.contains(id)) {
+				String rowTxt = rows.get(i).getText();
+				if (rowTxt.contains(id)) {
 					isFound = true;
 					sleep(1);
-					driver.findElement(By.xpath("//a[text()='" + id.trim() + "']")).click();
+					driver.findElement(By.xpath("//a[text()='"+id.trim()+"']")).click();
 					break;
 				}
-
 			}
 			if (!isFound)
 				driver.findElement(By.xpath("//a[text()='Next']")).click();
-
+			
+			
 		}
 	}
 
